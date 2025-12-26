@@ -12,7 +12,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: 'event-management-system-rho-two.vercel.app',
+    origin: 'https://event-management-system-rho-two.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   })

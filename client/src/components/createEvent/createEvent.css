@@ -1,0 +1,188 @@
+.create-event-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 10px 14px;
+  padding-right: 32px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  background: #f9fafb;
+  color: #111827;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-wrapper select:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.datetime-row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 16px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.input-wrapper input[type="date"],
+.input-wrapper input[type="time"] {
+  width: 100%;
+  padding: 10px 12px;
+  padding-left: 38px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  background: #f9fafb;
+  color: #111827;
+  outline: none;
+}
+
+.input-wrapper input[type="date"]:focus,
+.input-wrapper input[type="time"]:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.input-wrapper input[type="time"] {
+  padding-right: 32px;
+}
+
+.time-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.create-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #6d5ce7;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.create-btn:hover {
+  background: #5b4dd6;
+}
+
+.btn-icon {
+  font-size: 18px;
+  font-weight: 300;
+}
+/* Purple selected input */
+.profile-selected.purple {
+  background: #8b5cf6;
+  color: white;
+  border: none;
+}
+
+/* Profile item row */
+.profile-item {
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-item:hover {
+  background: #f3f4f6;
+}
+
+/* Selected profile */
+.profile-item.active {
+  background: #8b5cf6;
+  color: white;
+}
+
+/* Checkmark */
+.check {
+  font-weight: bold;
+}
+
+/* Add profile row */
+.add-profile-row {
+  padding: 10px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 14px;
+  cursor: pointer;
+  color: #6d5ce7;
+}
+
+.add-profile-row:hover {
+  background: #f5f3ff;
+}

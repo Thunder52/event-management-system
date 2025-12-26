@@ -1,0 +1,19 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.page {
+  height: calc(100vh - 144px); 
+  padding: 24px;
+  background: #f9fafb;
+}
+
+.flex-container {
+  display: flex;
+  gap: 16px;            
+  height: 100%;
+  align-items: stretch;     
+}

@@ -48,6 +48,12 @@ const EditEvent = ({ event, onClose }) => {
     const startDateTime = new Date(`${startDate}T${startTime}`);
     const endDateTime = new Date(`${endDate}T${endTime}`);
 
+    // Validate that end date/time is not before start date/time
+    if (endDateTime <= startDateTime) {
+      alert('End date and time must be after start date and time');
+      return;
+    }
+
     const result = await dispatch(
       updateEvent({
         id: event._id,
@@ -123,7 +129,21 @@ const EditEvent = ({ event, onClose }) => {
                 <input
                   type="date"
                   value={startDate}
-                  onChange={(e) => setStartDate(e.target.value)}
+                  onChange={(e) => {
+                    const newStartDate = e.target.value;
+                    setStartDate(newStartDate);
+                    // If end date is before new start date, reset end date to start date
+                    if (endDate && newStartDate && endDate < newStartDate) {
+                      setEndDate(newStartDate);
+                      // If same date, ensure end time is after start time
+                      if (endTime <= startTime) {
+                        // Set end time to 1 hour after start time
+                        const [hours, minutes] = startTime.split(':');
+                        const newEndHours = String((parseInt(hours) + 1) % 24).padStart(2, '0');
+                        setEndTime(`${newEndHours}:${minutes}`);
+                      }
+                    }
+                  }}
                 />
               </div>
               <div className="input-wrapper">
@@ -131,7 +151,16 @@ const EditEvent = ({ event, onClose }) => {
                 <input
                   type="time"
                   value={startTime}
-                  onChange={(e) => setStartTime(e.target.value)}
+                  onChange={(e) => {
+                    setStartTime(e.target.value);
+                    // If same date and end time is before or equal to new start time, update end time
+                    if (startDate === endDate && endTime <= e.target.value) {
+                      // Set end time to 1 hour after start time, or minimum valid time
+                      const [hours, minutes] = e.target.value.split(':');
+                      const newEndHours = String((parseInt(hours) + 1) % 24).padStart(2, '0');
+                      setEndTime(`${newEndHours}:${minutes}`);
+                    }
+                  }}
                 />
                 <span className="time-arrow">▾</span>
               </div>
@@ -148,6 +177,7 @@ const EditEvent = ({ event, onClose }) => {
                   type="date"
                   value={endDate}
                   onChange={(e) => setEndDate(e.target.value)}
+                  min={startDate || undefined}
                 />
               </div>
               <div className="input-wrapper">
@@ -156,6 +186,7 @@ const EditEvent = ({ event, onClose }) => {
                   type="time"
                   value={endTime}
                   onChange={(e) => setEndTime(e.target.value)}
+                  min={startDate === endDate ? startTime : undefined}
                 />
                 <span className="time-arrow">▾</span>
               </div>

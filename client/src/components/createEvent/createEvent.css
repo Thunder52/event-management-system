@@ -8,24 +8,25 @@
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
+  gap: 0;
 }
 
 .card-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 16px;
-  color: #1f2937;
+  margin-bottom: 20px;
+  color: #111827;
 }
 
 .form-group {
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .form-group label {
   display: block;
   font-size: 13px;
   font-weight: 500;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: #374151;
 }
 
@@ -46,6 +47,7 @@
   outline: none;
   appearance: none;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .select-wrapper select:focus {
@@ -65,7 +67,7 @@
 
 .datetime-row {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .input-wrapper {
@@ -81,6 +83,7 @@
   font-size: 16px;
   z-index: 1;
   pointer-events: none;
+  color: #6b7280;
 }
 
 .input-wrapper input[type="date"],
@@ -94,6 +97,7 @@
   background: #f9fafb;
   color: #111827;
   outline: none;
+  transition: all 0.2s ease;
 }
 
 .input-wrapper input[type="date"]:focus,
@@ -118,7 +122,7 @@
 
 .create-btn {
   width: 100%;
-  margin-top: 10px;
+  margin-top: auto;
   padding: 12px;
   border: none;
   border-radius: 8px;

@@ -95,9 +95,14 @@ export default function ProfileDropdown() {
           <div className="add-profile">
             <input
               type="text"
-              placeholder="beta"
+              placeholder="Enter profile name"
               value={newProfile}
               onChange={(e) => setNewProfile(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  addProfile();
+                }
+              }}
             />
             <button onClick={addProfile}>Add</button>
           </div>

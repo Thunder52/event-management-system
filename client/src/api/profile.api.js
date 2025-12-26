@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: 'https://event-management-system-08d9.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },

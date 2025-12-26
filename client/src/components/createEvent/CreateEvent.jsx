@@ -1,4 +1,4 @@
-import './CreateEvent.css';
+import './createEvent.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MultiProfileDropdown from '../profileDropDown/MultiProfileDropdown';
